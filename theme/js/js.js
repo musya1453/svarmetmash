@@ -1,26 +1,31 @@
 (function ($) {
 
-  if (typeof Drupal != 'undefined') {
-    Drupal.behaviors.wcportalMobileTheme = {
-      attach: function (context, settings) {
-        init();
-      },
+  $(window).load(function(){
+    var $btn = $('.btn-recall'),
+      $form = $('.popup .form'),
+      $thx = $('.popup .thanks'),
+      $close  =$('.btn-close'),
+      $back  = $('.bg-black');
 
-      completedCallback: function () {
-        // Do nothing. But it's here in case other modules/themes want to override it.
-      }
-    }
-  }
+    $btn.on('click', function(e){
+      e.preventDefault();
 
-  $(function () {
-    if (typeof Drupal == 'undefined') {
-      init();
-    }
+      $form.addClass('active');
+      $back.addClass('active');
+    })
+
+    $close.on('click touch', function(){
+      $form.removeClass('active');
+      $back.removeClass('active');
+      $thx.removeClass('active');
+    });
+
+    $back.on('click touch', function(){
+      $form.removeClass('active');
+      $back.removeClass('active');
+      $thx.removeClass('active');
+    })
   });
-
-  function init() {
-
-  }
 
 })(jQuery);
 
