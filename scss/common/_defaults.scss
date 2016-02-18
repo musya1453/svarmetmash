@@ -6,6 +6,10 @@ body {
   min-height: 100%;
   height: 100%;
   font-size: 14px;
+  line-height: 1.3;
+  font-family: Arial, sans-serif;
+  color: #176281;
+  min-width: 1050px;
 }
 
 .clearfix {
@@ -29,4 +33,9 @@ body {
 
 .pull-right {
   float: right;
+}
+
+a {
+  color: #47cb65;
+  outline: none !important;
 }
